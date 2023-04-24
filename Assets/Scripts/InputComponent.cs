@@ -19,6 +19,8 @@ namespace Tanks
 
         private FireComponent _fireComp;
 
+        public Animator _animator;
+
         [SerializeField]
         private InputAction _move;
         [SerializeField]

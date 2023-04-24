@@ -9,17 +9,23 @@ namespace Tanks
     {
         [SerializeField]
         private float _speed = 1f;
-        [SerializeField]
-        private Animator _animator;
+
+        private InputComponent _inputComponent;
+        
 
         public void OnMove(DirectionType type)
 
 
         {
-            _animator.SetBool("isMoving", true);
+            _inputComponent._animator.SetBool("isMoving", true);
             
             transform.position = transform.position + Extensions.ConvertTypeFromDirection(type) * (Time.deltaTime * _speed);
             transform.eulerAngles = Extensions.ConvertTypeFromRotation(type);
+        }
+
+        private void Start()
+        {
+            _inputComponent = GetComponent<InputComponent>();
         }
 
     }

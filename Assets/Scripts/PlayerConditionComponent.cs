@@ -13,6 +13,8 @@ namespace Tanks
 
         private SpriteRenderer _renderer;
 
+       
+
         [SerializeField]
         private float _immortalTime = 3f;
         [SerializeField]
@@ -20,6 +22,7 @@ namespace Tanks
 
         private void Start()
         {
+          
             _startPoint = transform.position;
             _renderer = GetComponent<SpriteRenderer>();
         }

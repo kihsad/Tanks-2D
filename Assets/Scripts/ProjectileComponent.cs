@@ -37,10 +37,8 @@ namespace Tanks
             (_direction, _side) = (direction, side);
         }
 
-        private void Update()
-        {
-            _moveComp.OnMove(_direction);
-        }
+        private void Update() => _moveComp.OnMove(_direction);
+       
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
