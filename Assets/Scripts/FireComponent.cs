@@ -19,6 +19,8 @@ namespace Tanks
         [SerializeField]
         private SideType _side;
 
+        public Transform _firePoint;
+        public GameObject _bulletPrefab;
 
         public SideType GetSide => _side;
 
@@ -26,12 +28,19 @@ namespace Tanks
         {
             if (!_canFire) return;
 
-            var bullet = Instantiate(_prefab, transform.position, transform.rotation);
-            bullet.SetParams(transform.eulerAngles.ConvertDirectionFromType(), _side);
+            //var bullet = Instantiate(_prefab, _firePoint.position, _firePoint.rotation);
+            //bullet.SetParams(transform.eulerAngles.ConvertDirectionFromType(), _side);
 
+            Fire();
             StartCoroutine(OnDelay());
 
         }
+
+        public void Fire()
+        {
+            Instantiate(_bulletPrefab, _firePoint.position, _firePoint.rotation);
+        }
+
 
         private IEnumerator OnDelay()
         {

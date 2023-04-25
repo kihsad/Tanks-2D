@@ -25,18 +25,29 @@ namespace Tanks
         [SerializeField]
         private float _lifetime = 3f;
 
+        [SerializeField]
+        private float _speed = 50f;
+        public Rigidbody2D rb_bullet;
+
+
+        public GameObject bulletPrefab;
 
         private void Start()
         {
+
+
+            rb_bullet.velocity = transform.up * _speed;
+
             _moveComp= GetComponent<MoveComponent>();
             Destroy (gameObject, _lifetime);
         }
 
-        public void SetParams(DirectionType direction, SideType side)
-        {
-            (_direction, _side) = (direction, side);
-        }
+        //public void SetParams(DirectionType direction, SideType side)
+        //{
+        //    (_direction, _side) = (direction, side);
+        //}
 
+        
         private void Update() => _moveComp.OnMove(_direction);
        
 

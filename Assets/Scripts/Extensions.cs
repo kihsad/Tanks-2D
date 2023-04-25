@@ -35,18 +35,18 @@ namespace Tanks
 
         }
 
-        public static Vector3 ConvertTypeFromDirection (this DirectionType type) => _directions[type];
+        public static Vector3 ConvertTypeFromDirection (DirectionType type) => _directions[type];
         public static DirectionType ConvertDirectionFromType (this Vector3 direction) => _directions.First(t => t.Value == direction).Key;
 
-        public static DirectionType ConvertDirectionFromType(this Vector2 direction) // Vector2 converter
+        public static DirectionType ConvertDirectionFromType (this Vector2 direction) // Vector2 converter
         {
             var dir = (Vector3)direction;
             return _directions.First(t => t.Value == dir).Key;
         }
 
-        public static Vector3 ConvertTypeFromRotation(this DirectionType type) => _rotations[type];
+        public static Vector3 ConvertTypeFromRotation(DirectionType type) => _rotations[type];
 
-        public static DirectionType  ConvertRotationFromType (this Vector3 rotation) => _rotations.First(t =>t.Value == rotation).Key;
+        public static DirectionType  ConvertRotationFromType (Vector3 rotation) => _rotations.First(t =>t.Value == rotation).Key;
 
 
     }
