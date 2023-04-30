@@ -1,6 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
+
 using UnityEngine;
 
 namespace Tanks
@@ -12,11 +11,9 @@ namespace Tanks
     {
        
         private SideType _side;
-
-      
+              
         private DirectionType _direction;
-
-       
+               
         private MoveComponent _moveComp;
 
         [SerializeField]
@@ -27,6 +24,14 @@ namespace Tanks
 
         [SerializeField]
         private float _speed = 50f;
+
+        [SerializeField]
+        private int _playerScore;
+
+        [SerializeField]
+        private int _enemyScore;
+
+
         public Rigidbody2D rb_bullet;
 
 
@@ -36,7 +41,7 @@ namespace Tanks
         {
 
 
-            rb_bullet.velocity = transform.up * _speed;
+            //rb_bullet.velocity = transform.up * _speed;
 
             _moveComp= GetComponent<MoveComponent>();
             Destroy (gameObject, _lifetime);
@@ -47,9 +52,9 @@ namespace Tanks
         //    (_direction, _side) = (direction, side);
         //}
 
-        
-        private void Update() => _moveComp.OnMove(_direction);
-       
+
+        private void Update() => rb_bullet.velocity = transform.up * _speed;
+
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -70,6 +75,15 @@ namespace Tanks
 
                 if (cell.DestroyProjectile) Destroy(gameObject);
                 if (cell.DestroyCell) Destroy(cell.gameObject);
+                return;
+            }
+
+            var enemy = collision.GetComponent<EnemyConditionComponent>();
+            if (enemy != null)
+            {
+                _playerScore += 1;
+                Destroy(gameObject);
+                Debug.Log("Score + 1");
                 return;
             }
             

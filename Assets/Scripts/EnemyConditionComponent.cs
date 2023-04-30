@@ -1,30 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using Tanks;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 namespace Tanks
 {
+
     [RequireComponent(typeof(SpriteRenderer))]
 
-    public class PlayerConditionComponent : ConditionComponent
+    public class EnemyConditionComponent : ConditionComponent
     {
         private bool isImmortal;
-        private Vector3 _startPoint;
+        //private Vector3 _startPoint;
 
         private SpriteRenderer _renderer;
 
-       
+
 
         [SerializeField]
         private float _immortalTime = 3f;
         [SerializeField]
         private float _immortalSwitch = 0.2f;
-        
 
         private void Start()
         {
-          
-            _startPoint = transform.position;
+
+            //_startPoint = transform.position;
             _renderer = GetComponent<SpriteRenderer>();
         }
 
@@ -33,16 +35,16 @@ namespace Tanks
             if (isImmortal) return;
 
             _health -= damage;
-            transform.position = _startPoint;
+            //transform.position = _startPoint;
             StartCoroutine(OnImmortal());
-                     
+
 
             if (_health <= 0)
             {
-                 Destroy(gameObject);
+                Destroy(gameObject);
             }
-               
-                       
+
+
         }
 
         private IEnumerator OnImmortal()
