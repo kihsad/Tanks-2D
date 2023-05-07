@@ -150,8 +150,7 @@ MonoBehaviour:
   _damage: 1
   _lifetime: 3
   _speed: 5
-  _playerScore: 0
-  _enemyScore: 0
+  _uiManager: {fileID: 0}
   rb_bullet: {fileID: 5996590565863516721}
   bulletPrefab: {fileID: 5996590565863516722}
 --- !u!114 &3661465412801769452

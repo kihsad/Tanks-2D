@@ -25,11 +25,9 @@ namespace Tanks
         [SerializeField]
         private float _speed = 50f;
 
-        [SerializeField]
-        private int _playerScore;
-
-        [SerializeField]
-        private int _enemyScore;
+       
+       
+        public UI_Manager _uiManager;
 
 
         public Rigidbody2D rb_bullet;
@@ -45,6 +43,9 @@ namespace Tanks
 
             _moveComp= GetComponent<MoveComponent>();
             Destroy (gameObject, _lifetime);
+
+            _uiManager = FindObjectOfType<UI_Manager>();
+            
         }
 
         //public void SetParams(DirectionType direction, SideType side)
@@ -65,6 +66,8 @@ namespace Tanks
 
                 var condition = fire.GetComponent<ConditionComponent>();
                 condition.SetDamage(_damage);
+                Debug.Log("Score+1");
+                _uiManager.AddScore();
                 Destroy(gameObject);
                 return;
             }
@@ -78,17 +81,10 @@ namespace Tanks
                 return;
             }
 
-            var enemy = collision.GetComponent<EnemyConditionComponent>();
-            if (enemy != null)
-            {
-                _playerScore += 1;
-                Destroy(gameObject);
-                Debug.Log("Score + 1");
-                return;
-            }
-            
 
-            
+
+
+
         }
 
     }

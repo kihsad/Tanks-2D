@@ -14,11 +14,12 @@ namespace Tanks
         private SpriteRenderer _renderer;
 
        
-
         [SerializeField]
         private float _immortalTime = 3f;
         [SerializeField]
         private float _immortalSwitch = 0.2f;
+        [SerializeField]
+        private int _playerScore;
         
 
         private void Start()
@@ -34,6 +35,7 @@ namespace Tanks
 
             _health -= damage;
             transform.position = _startPoint;
+            
             StartCoroutine(OnImmortal());
                      
 
@@ -58,6 +60,8 @@ namespace Tanks
             isImmortal = false;
             _renderer.enabled = true;
         }
+
+     
 
 
     }
