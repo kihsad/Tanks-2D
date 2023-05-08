@@ -20,7 +20,18 @@ namespace Tanks
         private float _immortalSwitch = 0.2f;
         [SerializeField]
         private int _playerScore;
-        
+
+        public int Lives
+        {
+            get { return _health; } 
+            set 
+            {
+                if (value < 3) _health = value;
+                healthBar.RefreshHealthHearts();
+            }
+        }
+
+        private HealthBar healthBar;
 
         private void Start()
         {
@@ -33,7 +44,7 @@ namespace Tanks
         {
             if (isImmortal) return;
 
-            _health -= damage;
+            Lives -= damage;
             transform.position = _startPoint;
 
             StartCoroutine(OnImmortal());
@@ -61,7 +72,11 @@ namespace Tanks
             _renderer.enabled = true;
         }
 
-     
+        private void Awake()
+        {
+            healthBar = FindObjectOfType<HealthBar>();
+        }
+
 
 
     }
