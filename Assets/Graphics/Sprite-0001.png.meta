@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d3e9cc34a32b57148a49edc8da69a2a4
+guid: 71b297725c66daf429e8dfa8c3a26c95
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 48
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Green Tank Spritesheet 296_0
+      name: Sprite-0001_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 172
-        width: 100
-        height: 124
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd931c0ce912277418fbc7a10ff1bff1
-      internalID: 1409887359
+      spriteID: 7ae71a8c88690384d86f9e851b85eba0
+      internalID: 2112860323
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Green Tank Spritesheet 296_1
+      name: Sprite-0001_1
       rect:
         serializedVersion: 2
-        x: 184
-        y: 172
-        width: 100
-        height: 124
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,20 +151,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e6c0abfcd5829e40adcbd29d5946068
-      internalID: 726900324
+      spriteID: 53977d9b771ed6f4a907104dde8fba29
+      internalID: 563620329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Green Tank Spritesheet 296_2
+      name: Sprite-0001_2
       rect:
         serializedVersion: 2
-        x: 16
-        y: 4
-        width: 100
-        height: 124
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,20 +172,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 237a0ef79fdcd064687ef9e8e5764fe4
-      internalID: -1783943357
+      spriteID: e9ddbd8c908bc234fa89120f7939eba8
+      internalID: -1742723733
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Green Tank Spritesheet 296_3
+      name: Sprite-0001_3
       rect:
         serializedVersion: 2
-        x: 184
-        y: 4
-        width: 100
-        height: 124
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,8 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72514b20f8455194b90357f0f66a731f
-      internalID: 1056106524
+      spriteID: 22cacc2084bdb374db49d17ac5d8d621
+      internalID: 580387927
       vertices: []
       indices: 
       edges: []
@@ -210,10 +210,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Green Tank Spritesheet 296_0: 1409887359
-      Green Tank Spritesheet 296_1: 726900324
-      Green Tank Spritesheet 296_3: 1056106524
-      Green Tank Spritesheet 296_2: -1783943357
+      Sprite-0001_0: 2112860323
+      Sprite-0001_3: 580387927
+      Sprite-0001_1: 563620329
+      Sprite-0001_2: -1742723733
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

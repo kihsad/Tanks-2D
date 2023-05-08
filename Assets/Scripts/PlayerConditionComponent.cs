@@ -35,16 +35,16 @@ namespace Tanks
 
             _health -= damage;
             transform.position = _startPoint;
-            
+
             StartCoroutine(OnImmortal());
-                     
+
 
             if (_health <= 0)
             {
-                 Destroy(gameObject);
+                Destroy(gameObject);
             }
-               
-                       
+
+
         }
 
         private IEnumerator OnImmortal()

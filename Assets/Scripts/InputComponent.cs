@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 
 namespace Tanks
@@ -25,6 +26,8 @@ namespace Tanks
         private InputAction _move;
         [SerializeField]
         private InputAction _fire;
+        [SerializeField]
+        private InputAction _escToMenu;
 
         private void Start()
         {
@@ -33,6 +36,7 @@ namespace Tanks
 
             _move.Enable();
             _fire.Enable();
+            _escToMenu.Enable();
 
             
         }
@@ -42,6 +46,14 @@ namespace Tanks
             var fire = _fire.ReadValue<float>();
 
             if (fire == 1f) _fireComp.OnFire();
+
+            var escToMenu = _escToMenu.ReadValue<float>();
+
+            if (escToMenu == 1f)
+            {
+                onEscToMenu();
+            }
+
 
             var direction = _move.ReadValue<Vector2>();
             DirectionType type;
@@ -63,6 +75,12 @@ namespace Tanks
         {
             _move.Dispose();
             _fire.Dispose();
+        }
+
+        private void onEscToMenu()
+        {
+            SceneManager.LoadScene(1);
+            Time.timeScale = 1f;
         }
     }
 }

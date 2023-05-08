@@ -11,8 +11,8 @@ namespace Tanks
         private float _speed = 1f;
 
         private InputComponent _inputComponent;
-        
 
+        
         public void OnMove(DirectionType type)
 
 
@@ -21,11 +21,14 @@ namespace Tanks
             
             transform.position = transform.position + Extensions.ConvertTypeFromDirection(type) * (Time.deltaTime * _speed);
             transform.eulerAngles = Extensions.ConvertTypeFromRotation(type);
+
+            
         }
 
         private void Start()
         {
             _inputComponent = GetComponent<InputComponent>();
+            _inputComponent._animator.SetBool("isMoving", false);
         }
 
     }
