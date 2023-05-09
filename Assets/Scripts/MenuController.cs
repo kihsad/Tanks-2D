@@ -14,9 +14,11 @@ public class MenuController : MonoBehaviour
     [SerializeField]
     private Button _settingsButton;
 
-
     [SerializeField]
     private Button _exitButton;
+
+    [SerializeField]
+    private AudioSource _buttonSound;
 
     public void OnRestart()
     {
@@ -34,6 +36,11 @@ public class MenuController : MonoBehaviour
     {
         EditorApplication.isPlaying= false;
         Time.timeScale = 1.0f;
+    }
+
+    public void OnButton()
+    {
+        _buttonSound.Play();
     }
 
 }

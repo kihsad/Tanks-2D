@@ -11,6 +11,9 @@ namespace Tanks
         [SerializeField]
         private float _speed = 1f;
 
+        [SerializeField]
+        private AudioSource moveSound;
+
         private InputComponent _inputComponent;
 
         
@@ -18,7 +21,9 @@ namespace Tanks
 
 
         {
+
             //_inputComponent._animator.SetFloat("speed", 1f);
+            moveSound.Play();
             Debug.Log("Tank is moving");
 
             

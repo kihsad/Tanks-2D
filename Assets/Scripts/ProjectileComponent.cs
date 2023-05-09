@@ -9,7 +9,15 @@ namespace Tanks
     public class ProjectileComponent : MonoBehaviour
 
     {
-       
+        [SerializeField]
+        public AudioSource _brickSound;
+
+        [SerializeField]
+        public AudioSource _steelSound;
+
+        [SerializeField]
+        public AudioSource _tankSound;
+
         private SideType _side;
               
         private DirectionType _direction;
@@ -64,11 +72,12 @@ namespace Tanks
             {
                 //if (fire.GetSide == _side) return;
 
+                _tankSound.Play();
                 var condition = fire.GetComponent<EnemyConditionComponent>();
                 condition.SetDamageToEnemy(_damage);
                 Debug.Log("Score+1");
                 _uiManager.AddScore();
-                Destroy(gameObject);
+                Destroy(gameObject, 0.2f);
                 return;
 
 
@@ -78,9 +87,10 @@ namespace Tanks
             var fireEnemy = collision.GetComponent<PlayerConditionComponent>();
             if (fireEnemy != null) 
             {
+                _tankSound.Play();
                 var condition = fireEnemy.GetComponent<PlayerConditionComponent>();
                 condition.SetDamage(_damage);
-                Destroy(gameObject);
+                Destroy(gameObject, 0.2f);
                 return;
             }
 
@@ -90,9 +100,26 @@ namespace Tanks
             if (cell != null)
             {
 
-                if (cell.DestroyProjectile) Destroy(gameObject);
-                if (cell.DestroyCell) Destroy(cell.gameObject);
-                return;
+                if (cell.DestroyProjectile )
+                {
+                    _steelSound.Play();
+                                      
+                    Destroy(gameObject, 0.2f); 
+                }
+                    
+                                    
+                if (cell.DestroyCell )
+                {
+                    _brickSound.Play();
+                    Debug.Log(_brickSound.enabled);
+                    
+
+                    Destroy(cell.gameObject, 0.2f);
+                    return;
+                }
+
+
+               
             }
 
 

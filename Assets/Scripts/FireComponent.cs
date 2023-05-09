@@ -10,6 +10,8 @@ namespace Tanks
 
         private bool _canFire = true;
 
+        public AudioSource shootSound;
+
         [SerializeField, Range(0.1f, 2f)]
         private float _delayFire = 2f;
 
@@ -40,6 +42,7 @@ namespace Tanks
 
         public void Fire()
         {
+            shootSound.Play();
             Instantiate(_bulletPrefab, _firePoint.position, _firePoint.rotation);
             StartCoroutine(OnDelay());
 
