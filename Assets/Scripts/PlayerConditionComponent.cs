@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Tanks
 {
     [RequireComponent(typeof(SpriteRenderer))]
 
-    public class PlayerConditionComponent : ConditionComponent
+    public class PlayerConditionComponent : MonoBehaviour
     {
         private bool isImmortal;
         private Vector3 _startPoint;
 
+        public int _health = 3;
+
         private SpriteRenderer _renderer;
 
+        [SerializeField]
+        private GameObject GO_UIpanel;
+
+        public Animator _animator;
        
         [SerializeField]
         private float _immortalTime = 3f;
@@ -38,21 +46,32 @@ namespace Tanks
           
             _startPoint = transform.position;
             _renderer = GetComponent<SpriteRenderer>();
+            GO_UIpanel.SetActive(false);
         }
 
-        public override void SetDamage(int damage)
+        public void SetDamage(int damage)
         {
             if (isImmortal) return;
 
             Lives -= damage;
             transform.position = _startPoint;
-
+            
             StartCoroutine(OnImmortal());
+
+            Debug.Log("Player is shot");
+            
 
 
             if (_health <= 0)
             {
+                _animator.SetFloat("death", 1f);
+
                 Destroy(gameObject);
+
+                Debug.Log("Tank is destroyed");
+
+                GO_UIpanel.SetActive(true);
+
             }
 
 
@@ -76,6 +95,9 @@ namespace Tanks
         {
             healthBar = FindObjectOfType<HealthBar>();
         }
+
+  
+
 
 
 

@@ -29,6 +29,9 @@ namespace Tanks
         [SerializeField]
         private InputAction _escToMenu;
 
+        [SerializeField]
+        private InputAction _explode;
+
         private void Start()
         {
             _moveComp = GetComponent<MoveComponent>();
@@ -37,6 +40,7 @@ namespace Tanks
             _move.Enable();
             _fire.Enable();
             _escToMenu.Enable();
+            _explode.Enable();
 
             
         }
@@ -54,6 +58,8 @@ namespace Tanks
                 onEscToMenu();
             }
 
+            var explode = _explode.ReadValue<float>();
+            if (explode == 1f) onExplosion();
 
             var direction = _move.ReadValue<Vector2>();
             DirectionType type;
@@ -67,20 +73,28 @@ namespace Tanks
             else type = _lastType = Extensions.ConvertDirectionFromType(direction);
             
             _moveComp.OnMove(type);
+            _animator.SetFloat("speed", 1f);
 
         }
 
 
         private void OnDestroy()
         {
+            
             _move.Dispose();
             _fire.Dispose();
+                        
         }
 
         private void onEscToMenu()
         {
             SceneManager.LoadScene(1);
             Time.timeScale = 1f;
+        }
+
+        public void onExplosion()
+        {
+            _animator.SetFloat("death", 1);
         }
     }
 }

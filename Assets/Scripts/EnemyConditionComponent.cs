@@ -11,6 +11,8 @@ namespace Tanks
 
     public class EnemyConditionComponent : ConditionComponent
     {
+        private int _enemyHealth = 5;
+
         private bool isImmortal;
         //private Vector3 _startPoint;
 
@@ -30,19 +32,25 @@ namespace Tanks
             _renderer = GetComponent<SpriteRenderer>();
         }
 
-        public override void SetDamage(int damage)
+        public void SetDamageToEnemy(int damage)
         {
             if (isImmortal) return;
 
-            _health -= damage;
+            _enemyHealth -= damage;
             //transform.position = _startPoint;
+
+            Debug.Log("Enemy is shot");
+
             StartCoroutine(OnImmortal());
 
 
-            if (_health <= 0)
+            if (_enemyHealth <= 0)
             {
                 Destroy(gameObject);
+                Debug.Log("EnemyTank is destroyed");
             }
+
+            
 
 
         }
@@ -64,3 +72,4 @@ namespace Tanks
 
     }
 }
+

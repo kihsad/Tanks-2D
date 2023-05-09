@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace Tanks
@@ -17,7 +18,9 @@ namespace Tanks
 
 
         {
-            _inputComponent._animator.SetBool("isMoving", true);
+            //_inputComponent._animator.SetFloat("speed", 1f);
+            Debug.Log("Tank is moving");
+
             
             transform.position = transform.position + Extensions.ConvertTypeFromDirection(type) * (Time.deltaTime * _speed);
             transform.eulerAngles = Extensions.ConvertTypeFromRotation(type);
@@ -28,7 +31,7 @@ namespace Tanks
         private void Start()
         {
             _inputComponent = GetComponent<InputComponent>();
-            _inputComponent._animator.SetBool("isMoving", false);
+            
         }
 
     }

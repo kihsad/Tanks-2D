@@ -59,18 +59,32 @@ namespace Tanks
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            var fire = collision.GetComponent<FireComponent>(); 
+            var fire = collision.GetComponent<EnemyConditionComponent>();
             if (fire != null)
             {
-                if (fire.GetSide == _side) return;
+                //if (fire.GetSide == _side) return;
 
-                var condition = fire.GetComponent<ConditionComponent>();
-                condition.SetDamage(_damage);
+                var condition = fire.GetComponent<EnemyConditionComponent>();
+                condition.SetDamageToEnemy(_damage);
                 Debug.Log("Score+1");
                 _uiManager.AddScore();
                 Destroy(gameObject);
                 return;
+
+
+
             }
+
+            var fireEnemy = collision.GetComponent<PlayerConditionComponent>();
+            if (fireEnemy != null) 
+            {
+                var condition = fireEnemy.GetComponent<PlayerConditionComponent>();
+                condition.SetDamage(_damage);
+                Destroy(gameObject);
+                return;
+            }
+
+
 
             var cell = collision.GetComponent<CellComponent>();
             if (cell != null)
