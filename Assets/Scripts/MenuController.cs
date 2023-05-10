@@ -5,42 +5,50 @@ using UnityEngine.UI;
 using UnityEditor;
 using UnityEngine;
 
-public class MenuController : MonoBehaviour
+namespace Tanks
+
 {
-
-    [SerializeField]
-    private Button _startButton;
-
-    [SerializeField]
-    private Button _settingsButton;
-
-    [SerializeField]
-    private Button _exitButton;
-
-    [SerializeField]
-    private AudioSource _buttonSound;
-
-    public void OnRestart()
+    public class MenuController : MonoBehaviour
     {
-        SceneManager.LoadScene(0);
-        Time.timeScale = 1.0f;
-    }
 
-    public void OnSettings()
-    {
-        SceneManager.LoadScene(2);
-        Time.timeScale = 1.0f;
-    }
+        [SerializeField]
+        private Button _startButton;
 
-    public void OnExit()
-    {
-        EditorApplication.isPlaying= false;
-        Time.timeScale = 1.0f;
-    }
+        [SerializeField]
+        private Button _settingsButton;
 
-    public void OnButton()
-    {
-        _buttonSound.Play();
-    }
+        [SerializeField]
+        private Button _exitButton;
 
+        [SerializeField]
+        private AudioSource _buttonSound;
+
+        [SerializeField]
+        private AudioSource menuMusic;
+
+
+        public void OnRestart()
+        {
+            SceneManager.LoadScene(0);
+            Time.timeScale = 1.0f;
+        }
+
+        public void OnSettings()
+        {
+            SceneManager.LoadScene(2);
+            Time.timeScale = 1.0f;
+        }
+
+        public void OnExit()
+        {
+            EditorApplication.isPlaying = false;
+            Time.timeScale = 1.0f;
+        }
+
+        public void OnButton()
+        {
+            _buttonSound.Play();
+        }
+
+    }
 }

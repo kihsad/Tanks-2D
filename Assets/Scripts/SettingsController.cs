@@ -5,25 +5,29 @@ using UnityEngine.UI;
 using UnityEditor;
 using UnityEngine.SceneManagement;
 
-public class SettingsController : MonoBehaviour
+namespace Tanks
 {
-    [SerializeField]
-    private Button _backToMenuButton;
-
-    [SerializeField]
-    private AudioSource settingsSound;
-
-    [SerializeField]
-    private AudioSource buttonSound;
-
-    public void onBackToMenu()
+    public class SettingsController : MonoBehaviour
     {
-        SceneManager.LoadScene(1);
-        Time.timeScale = 1.00f;
+        [SerializeField]
+        private Button _backToMenuButton;
+
+        [SerializeField]
+        private AudioSource settingsSound;
+
+        [SerializeField]
+        private AudioSource buttonSound;
+
+        public void onBackToMenu()
+        {
+            SceneManager.LoadScene(1);
+            Time.timeScale = 1.00f;
+        }
+
+        public void OnButton()
+        {
+            buttonSound.Play();
+        }
     }
 
-    public void OnButton()
-    {
-        buttonSound.Play();
-    }
 }
