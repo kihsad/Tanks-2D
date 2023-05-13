@@ -7,8 +7,8 @@ namespace Tanks
 {
     public static class Extensions
     {
-        private static Dictionary<DirectionType, Vector3> _directions;
-        private static Dictionary<DirectionType, Vector3> _rotations;
+        public static Dictionary<DirectionType, Vector3> _directions;
+        public static Dictionary<DirectionType, Vector3> _rotations;
 
         static Extensions()
         {
@@ -54,4 +54,6 @@ namespace Tanks
     public enum SideType : byte { None, Player, Enemy }
 
     public enum DirectionType : byte { Error, Up, Right, Down, Left }
+
+
 }

@@ -43,7 +43,6 @@ namespace Tanks
 
             StartCoroutine(OnImmortal());
 
-
             if (_enemyHealth <= 0)
             {
                 Destroy(gameObject);

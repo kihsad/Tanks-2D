@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4201926332206645205}
   - component: {fileID: 4201926332206645204}
-  - component: {fileID: 4201926332206645207}
   - component: {fileID: 4201926332206645214}
   - component: {fileID: 4201926332206645210}
-  - component: {fileID: 4201926332206645208}
-  - component: {fileID: 4201926332206645211}
   - component: {fileID: 4201926332206645209}
-  m_Layer: 0
+  - component: {fileID: -8529269360020991902}
+  - component: {fileID: -3266618447300548383}
+  - component: {fileID: -8457098742679580171}
+  m_Layer: 8
   m_Name: EnemyTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,24 +92,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4201926332206645207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4201926332206645206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 663c69a62dcc30e4493a0c5f51188107, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootSound: {fileID: 0}
-  _delayFire: 1
-  _prefab: {fileID: 5238231000818546932, guid: 9cb968165393e3d4bae87e19aee78322, type: 3}
-  _side: 2
-  _firePoint: {fileID: 4201926332979170903}
-  _bulletPrefab: {fileID: 5996590565863516722, guid: 9cb968165393e3d4bae87e19aee78322, type: 3}
 --- !u!50 &4201926332206645214
 Rigidbody2D:
   serializedVersion: 4
@@ -157,116 +139,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9430091, y: 1.8966368}
   m_EdgeRadius: 0
---- !u!114 &4201926332206645208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4201926332206645206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e0055cdadf4b8648bf2fe2b2246113d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 3
---- !u!114 &4201926332206645211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4201926332206645206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8525f8ee686653244bda9990bb0c2396, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animator: {fileID: 0}
-  _move:
-    m_Name: Move
-    m_Type: 0
-    m_ExpectedControlType: Vector2
-    m_Id: 27944295-c477-48e3-960f-75fb50d5229e
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 2D Vector
-      m_Id: 522142e2-79d8-4fd5-bfec-f1968ea77dbf
-      m_Path: 2DVector
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 4
-    - m_Name: up
-      m_Id: 45ba2ae1-9ec1-431f-b457-5f762b6f17e6
-      m_Path: <Keyboard>/upArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    - m_Name: down
-      m_Id: e5f345d9-276e-49dd-95a6-6d0a8bb6dd6e
-      m_Path: <Keyboard>/downArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    - m_Name: left
-      m_Id: 9572a7ed-9769-4cd5-a88e-1bc7bc228a16
-      m_Path: <Keyboard>/leftArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    - m_Name: right
-      m_Id: 820d405d-94a7-44b5-97dc-c6578af9ed87
-      m_Path: <Keyboard>/rightArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    m_Flags: 0
-  _fire:
-    m_Name: Fire
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 95431129-f70b-4aea-bd84-9a7224e8ae9b
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 6a554712-952d-450d-989b-7bbe571fcb2a
-      m_Path: <Keyboard>/rightShift
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Fire
-      m_Flags: 0
-    m_Flags: 0
-  _escToMenu:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  _explode:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
 --- !u!114 &4201926332206645209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +153,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _immortalTime: 0.1
   _immortalSwitch: 0.1
+--- !u!114 &-8529269360020991902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4201926332206645206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa1e98e01c65d3408ef4a41ad145408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolTime: 2
+  _speed: 1
+--- !u!114 &-3266618447300548383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4201926332206645206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663c69a62dcc30e4493a0c5f51188107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootSound: {fileID: 0}
+  _delayFire: 2
+  _prefab: {fileID: 4692186420236490816, guid: e23d63befbb440748b4430595343f641, type: 3}
+  _side: 2
+  _firePoint: {fileID: 0}
+  _bulletPrefab: {fileID: 6526906351793277574, guid: e23d63befbb440748b4430595343f641, type: 3}
+--- !u!114 &-8457098742679580171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4201926332206645206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcf642bb7eac64c4cb58993ee3a706b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  _size: {x: 5, y: 5}
+  _angle: 1
 --- !u!1 &4201926332979170902
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4201926332979170903}
   - component: {fileID: 4201926332979170900}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2292422890753027170}
   - component: {fileID: 406806600361406875}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyShootSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}

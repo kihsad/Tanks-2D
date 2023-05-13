@@ -59,8 +59,6 @@ namespace Tanks
             StartCoroutine(OnImmortal());
 
             Debug.Log("Player is shot");
-            
-
 
             if (_health <= 0)
             {
