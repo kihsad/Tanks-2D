@@ -11,7 +11,7 @@ namespace Tanks
 
     public class EnemyConditionComponent : ConditionComponent
     {
-        private int _enemyHealth = 5;
+        private int _enemyHealth = 2;
 
         private bool isImmortal;
         //private Vector3 _startPoint;
@@ -24,10 +24,11 @@ namespace Tanks
         private float _immortalTime = 3f;
         [SerializeField]
         private float _immortalSwitch = 0.2f;
+        private SpawnManager _spawnManager;
 
         private void Start()
         {
-
+            _spawnManager = FindObjectOfType<SpawnManager>();
             //_startPoint = transform.position;
             _renderer = GetComponent<SpriteRenderer>();
         }
@@ -47,6 +48,7 @@ namespace Tanks
             {
                 Destroy(gameObject);
                 Debug.Log("EnemyTank is destroyed");
+                _spawnManager._currentEnemies--;
             }
 
             

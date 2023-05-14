@@ -119,6 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 663c69a62dcc30e4493a0c5f51188107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyLayer:
+    serializedVersion: 2
+    m_Bits: 256
   shootSound: {fileID: 0}
   _delayFire: 0.25
   _prefab: {fileID: 5238231000818546932, guid: 9cb968165393e3d4bae87e19aee78322, type: 3}

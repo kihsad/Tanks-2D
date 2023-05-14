@@ -7,7 +7,7 @@ namespace Tanks
 {
     public class FireComponent : MonoBehaviour
     {
-
+        public LayerMask _enemyLayer;
         private bool _canFire = true;
 
         public AudioSource shootSound;

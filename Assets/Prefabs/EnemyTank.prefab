@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 4201926332206645209}
   - component: {fileID: -8529269360020991902}
   - component: {fileID: -3266618447300548383}
-  - component: {fileID: -8457098742679580171}
   m_Layer: 8
   m_Name: EnemyTank
   m_TagString: Untagged
@@ -165,6 +164,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa1e98e01c65d3408ef4a41ad145408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  _size: {x: 5, y: 5}
+  _angle: 0
   patrolTime: 2
   _speed: 1
 --- !u!114 &-3266618447300548383
@@ -179,29 +183,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 663c69a62dcc30e4493a0c5f51188107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootSound: {fileID: 0}
+  _enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  shootSound: {fileID: 406806600361406875}
   _delayFire: 2
   _prefab: {fileID: 4692186420236490816, guid: e23d63befbb440748b4430595343f641, type: 3}
   _side: 2
-  _firePoint: {fileID: 0}
+  _firePoint: {fileID: 4201926332979170903}
   _bulletPrefab: {fileID: 6526906351793277574, guid: e23d63befbb440748b4430595343f641, type: 3}
---- !u!114 &-8457098742679580171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4201926332206645206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcf642bb7eac64c4cb58993ee3a706b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  _size: {x: 5, y: 5}
-  _angle: 1
 --- !u!1 &4201926332979170902
 GameObject:
   m_ObjectHideFlags: 0

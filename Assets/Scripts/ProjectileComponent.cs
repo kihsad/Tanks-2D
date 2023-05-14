@@ -9,6 +9,10 @@ namespace Tanks
     public class ProjectileComponent : MonoBehaviour
 
     {
+        private FireComponent _fire;
+
+        public float _attackRange = 1f;
+
         [SerializeField]
         public AudioSource _brickSound;
 
@@ -46,10 +50,10 @@ namespace Tanks
         private void Start()
         {
 
-
+            _fire = GetComponent<FireComponent>();
             //rb_bullet.velocity = transform.up * _speed;
 
-            _moveComp= GetComponent<MoveComponent>();
+            _moveComp = GetComponent<MoveComponent>();
             Destroy (gameObject, _lifetime);
 
             _uiManager = FindObjectOfType<UI_Manager>();
