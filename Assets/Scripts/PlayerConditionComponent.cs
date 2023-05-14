@@ -69,10 +69,8 @@ namespace Tanks
                 Debug.Log("Tank is destroyed");
 
                 GO_UIpanel.SetActive(true);
-
+                Time.timeScale = 0;
             }
-
-
         }
 
         private IEnumerator OnImmortal()
@@ -93,11 +91,6 @@ namespace Tanks
         {
             healthBar = FindObjectOfType<HealthBar>();
         }
-
-  
-
-
-
 
     }
 }

@@ -16,10 +16,9 @@ GameObject:
   - component: {fileID: 7438374288279343316}
   - component: {fileID: -6355016329497062839}
   - component: {fileID: -4198204181210073339}
-  - component: {fileID: 2692839029148488858}
   m_Layer: 7
   m_Name: PlayerTank
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -290,18 +289,6 @@ MonoBehaviour:
   _immortalTime: 3
   _immortalSwitch: 0.2
   _playerScore: 0
---- !u!114 &2692839029148488858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4708778371531937100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caf0e32726d5a1d4aae5ec30267c9a9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5468109340363341973
 GameObject:
   m_ObjectHideFlags: 0

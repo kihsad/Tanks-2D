@@ -31,12 +31,7 @@ namespace Tanks
         {
             if (!_canFire) return;
 
-            //var bullet = Instantiate(_prefab, _firePoint.position, _firePoint.rotation);
-            //bullet.SetParams(transform.eulerAngles.ConvertDirectionFromType(), _side);
-
             if (_canFire) Fire();
-
-            //StartCoroutine(OnDelay());
 
         }
 

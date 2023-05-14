@@ -47,35 +47,23 @@ namespace Tanks
 
         public GameObject bulletPrefab;
 
+
         private void Start()
         {
-
             _fire = GetComponent<FireComponent>();
-            //rb_bullet.velocity = transform.up * _speed;
-
             _moveComp = GetComponent<MoveComponent>();
             Destroy (gameObject, _lifetime);
-
             _uiManager = FindObjectOfType<UI_Manager>();
-            
         }
-
-        //public void SetParams(DirectionType direction, SideType side)
-        //{
-        //    (_direction, _side) = (direction, side);
-        //}
-
 
         private void Update() => rb_bullet.velocity = transform.up * _speed;
 
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            var fire = collision.GetComponent<EnemyConditionComponent>();
+            var fire = collision.GetComponent<EnemyConditionComponent>();//бьет врага
             if (fire != null)
             {
-                //if (fire.GetSide == _side) return;
-
                 _tankSound.Play();
                 var condition = fire.GetComponent<EnemyConditionComponent>();
                 condition.SetDamageToEnemy(_damage);
@@ -83,12 +71,9 @@ namespace Tanks
                 _uiManager.AddScore();
                 Destroy(gameObject, 0.2f);
                 return;
-
-
-
             }
 
-            var fireEnemy = collision.GetComponent<PlayerConditionComponent>();
+            var fireEnemy = collision.GetComponent<PlayerConditionComponent>();//бьет игрока
             if (fireEnemy != null) 
             {
                 _tankSound.Play();
@@ -97,7 +82,6 @@ namespace Tanks
                 Destroy(gameObject, 0.2f);
                 return;
             }
-
 
 
             var cell = collision.GetComponent<CellComponent>();
@@ -122,13 +106,7 @@ namespace Tanks
                     return;
                 }
 
-
-               
             }
-
-
-
-
 
         }
 

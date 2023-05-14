@@ -15,14 +15,8 @@ namespace Tanks
         [SerializeField]
         private Button _settingsButton;
 
-
         [SerializeField]
         private Button _exitButton;
-
-
-
-
-
 
         public void OnRestart()
         {

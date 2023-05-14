@@ -18,25 +18,18 @@ namespace Tanks
 
         
         public void OnMove(DirectionType type)
-
-
         {
-
-            //_inputComponent._animator.SetFloat("speed", 1f);
             moveSound.Play();
             Debug.Log("Tank is moving");
-
             
             transform.position = transform.position + Extensions.ConvertTypeFromDirection(type) * (Time.deltaTime * _speed);
             transform.eulerAngles = Extensions.ConvertTypeFromRotation(type);
 
-            
         }
 
         private void Start()
         {
             _inputComponent = GetComponent<InputComponent>();
-            
         }
 
     }

@@ -47,9 +47,6 @@ namespace Tanks
             else
             {
                 transform.position = Vector2.MoveTowards(transform.position, _collider.transform.position, _speed * Time.deltaTime);
-                //var direction = _collider.transform.position - transform.position;
-                //var angle = Math.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                //transform.rotation = Quaternion.Euler(0, 0, ((float)angle));
             }
         }
         private DirectionType ChangeDirection()

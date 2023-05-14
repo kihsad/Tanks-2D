@@ -22,9 +22,6 @@ namespace Tanks
         private int _healthAmount;
 
         public ConditionComponent _healthComp;
-
-                
-        // Start is called before the first frame update
         void Start()
         {
             _scoreText.text = "Score:";
@@ -34,10 +31,7 @@ namespace Tanks
         public void AddScore()
         {
             _playerScore++;
-
             _scoreText.text = " Score: " + _playerScore.ToString();
-
-
         }
 
         public void ShowHealth()
