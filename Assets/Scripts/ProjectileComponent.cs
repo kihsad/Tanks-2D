@@ -37,11 +37,6 @@ namespace Tanks
         [SerializeField]
         private float _speed = 50f;
 
-       
-       
-        public UI_Manager _uiManager;
-
-
         public Rigidbody2D rb_bullet;
 
 
@@ -53,7 +48,6 @@ namespace Tanks
             _fire = GetComponent<FireComponent>();
             _moveComp = GetComponent<MoveComponent>();
             Destroy (gameObject, _lifetime);
-            _uiManager = FindObjectOfType<UI_Manager>();
         }
 
         private void Update() => rb_bullet.velocity = transform.up * _speed;
@@ -61,19 +55,18 @@ namespace Tanks
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            var fire = collision.GetComponent<EnemyConditionComponent>();//бьет врага
+            var fire = collision.GetComponent<EnemyConditionComponent>();//пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
             if (fire != null)
             {
                 _tankSound.Play();
                 var condition = fire.GetComponent<EnemyConditionComponent>();
                 condition.SetDamageToEnemy(_damage);
-                Debug.Log("Score+1");
-                _uiManager.AddScore();
+                
                 Destroy(gameObject, 0.2f);
                 return;
             }
 
-            var fireEnemy = collision.GetComponent<PlayerConditionComponent>();//бьет игрока
+            var fireEnemy = collision.GetComponent<PlayerConditionComponent>();//пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
             if (fireEnemy != null) 
             {
                 _tankSound.Play();

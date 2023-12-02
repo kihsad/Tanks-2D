@@ -31,7 +31,7 @@ namespace Tanks
         public void AddScore()
         {
             _playerScore++;
-            _scoreText.text = " Score: " + _playerScore.ToString();
+            _scoreText.text = "Score: " + _playerScore.ToString();
         }
 
         public void ShowHealth()

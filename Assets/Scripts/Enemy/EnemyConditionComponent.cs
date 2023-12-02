@@ -11,6 +11,7 @@ namespace Tanks
 
     public class EnemyConditionComponent : ConditionComponent
     {
+        public UI_Manager _uiManager;
         private int _enemyHealth = 2;
         private bool isImmortal;
         private SpriteRenderer _renderer;
@@ -25,6 +26,7 @@ namespace Tanks
         {
             _spawnManager = FindObjectOfType<SpawnManager>();
             _renderer = GetComponent<SpriteRenderer>();
+            _uiManager = FindObjectOfType<UI_Manager>();
         }
 
         public void SetDamageToEnemy(int damage)
@@ -38,6 +40,8 @@ namespace Tanks
 
             if (_enemyHealth <= 0)
             {
+                Debug.Log("Score+1");
+                _uiManager.AddScore();
                 Destroy(gameObject);
                 Debug.Log("EnemyTank is destroyed");
                 _spawnManager._currentEnemies--;

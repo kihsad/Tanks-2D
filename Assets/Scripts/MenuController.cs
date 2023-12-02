@@ -29,7 +29,7 @@ namespace Tanks
 
         public void OnRestart()
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
             Time.timeScale = 1.0f;
         }
 
@@ -41,7 +41,12 @@ namespace Tanks
 
         public void OnExit()
         {
+            #if UNITY_EDITOR
             EditorApplication.isPlaying = false;
+            #elif UNITY_STANDALONE
+            Application.Quit();
+            #endif
+
             Time.timeScale = 1.0f;
         }
 

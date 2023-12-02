@@ -1,4 +1,3 @@
-
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -32,7 +31,11 @@ namespace Tanks
 
         public void OnExit()
         {
+            #if UNITY_EDITOR
             EditorApplication.isPlaying = false;
+            #elif UNITY_STANDALONE
+            Application.Quit();
+            #endif
             Time.timeScale = 1.0f;
         }
     }
